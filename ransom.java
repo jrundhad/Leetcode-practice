@@ -14,7 +14,7 @@ public class ransom {
                 map.put(magazine.charAt(i), map.get(magazine.charAt(i)) + 1);
             }
         }
-        //go thoruigh characters of ransomNote and remove accordingly if key not in map return false
+        //go thorugh characters of ransomNote and remove accordingly if key not in map return false
         for(int i=0; i<ransomNote.length(); i++){
             if(map.get(ransomNote.charAt(i))==null){
                 return false;
