@@ -16,7 +16,13 @@ public class arrayIntersection {
                 ans.add(nums2[i]);
             }
         }
-        return ans.stream().mapToInt(i -> i).toArray();
+        int[] res = new int[ans.size()];
+        int index = 0;
+        for(int answer: ans) {
+            res[index] = answer;
+            index++;
+        }
         
+        return res;
     }
 }
