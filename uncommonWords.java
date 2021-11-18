@@ -6,7 +6,7 @@ public class uncommonWords {
     }
 
     public static String[] solution(String s1, String s2) {
-        HashMap<String,Integer> map = new HashMap<>();
+        HashMap<String,Integer> map = new HashMap<String,Integer>();
         List<String> ans = new ArrayList<String>();
         String[] s1words = s1.split(" ");
         String[] s2words = s2.split(" ");
