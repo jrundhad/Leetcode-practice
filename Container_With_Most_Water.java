@@ -1,15 +1,20 @@
+import java.util.*;
 public class Container_With_Most_Water {
     public int maxArea(int[] height) {
-        int max = 0;
-        for(int i=0; i<height.length; i++){
-            int value = height[i];
-            for(int j=0; j<height.length; j++)
-                if(height[j]>= value){
-                    if(value * java.lang.Math.abs(i-j) > max){
-                        max = value * java.lang.Math.abs(i-j);
-                    }
-                }
+        int i=0;
+        int j = height.length-1;
+        int maximum = 0;
+        while(j>=i){
+             int area = Math.min(height[j], height[i]) * (j-i);
+             maximum = Math.max(maximum, area);
+
+             if(height[j]>height[i]){
+                i++;
+             } else{
+                j--;
+             }
+        
         }
-        return max;    
+        return maximum;
     }
 }
