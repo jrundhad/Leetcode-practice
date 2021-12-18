@@ -1,14 +1,7 @@
-public class ListNode {
+public class listnode {
     int val;
-    ListNode next;
-    ListNode() {}
-    
-    ListNode(int val) { 
-        this.val = val; 
-    }
-
-    ListNode(int val, ListNode next) { 
-        this.val = val; 
-        this.next = next; 
-    }
+    listnode next;
+    listnode() {}
+    listnode(int val) { this.val = val; }
+    listnode(int val, listnode next) { this.val = val; this.next = next; }
 }
