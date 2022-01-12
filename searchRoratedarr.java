@@ -2,23 +2,35 @@ public class searchRoratedarr {
     public int search(int[] nums, int target) {
         int left = 0;
         int right = nums.length-1;
+        while(left<right){
+            int midpoint =left + (right-left)/2;
+            if(nums[midpoint]>nums[right]){
+                left = midpoint +1;
+            }
+            else {
+                right = midpoint;
+            }
+        }
+        int start = left;
+        left =0;
+        right = nums.length -1;
+        if(target>=nums[start] && target<=nums[right]){
+            left = start;
+        }else{
+            right = start;
+        }
+        
         while(left<=right){
-            int midpoint = (right-left)/2;
-            if(target==nums[left]){
-                return left;
-            }
-            if(target==nums[right]){
-                return right;
-            }
-            if(target==nums[midpoint]){
+            int midpoint = left+ (right-left)/2;
+            if(nums[midpoint]==target){
                 return midpoint;
             }
-            if(nums[left]<=nums[midpoint]){
-                if(target>=nums[left] && target<=nums[midpoint]){
-                    right = midpoint-1;
-                }
+            if(nums[midpoint]>target){
+                right = midpoint -1;
             }
-            left = midpoint+1;
+            else{
+                left = midpoint +1;
+            }
         }
         return -1;
     }
